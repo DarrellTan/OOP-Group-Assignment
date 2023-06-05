@@ -1,0 +1,7 @@
+Company 1
+Company Name: Bob Inc
+Year Founded: 200
+Annual revenue: 32
+Pollution index: 4
+
+
