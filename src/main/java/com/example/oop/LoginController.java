@@ -1,9 +1,10 @@
 package com.example.oop;
 
-import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,9 +14,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
 
     // Declaring the variables needed for login
     @FXML
@@ -61,20 +63,8 @@ public class LoginController {
         }
     }
 
-//
-//    public void start(Stage stage) throws IOException {
-//        //Gets UI from XML File
-//        FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("Login.fxml"));
-//        fxmlLoader.setLocation(getClass().getResource("Login.fxml"));
-//
-//        // Creates Scene for JavaFX Program
-//        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-//
-//        // Gets CSS file for Styling
-//        scene.getStylesheets().add(getClass().getResource("CSS/Login.css").toExternalForm());
-//        stage.setTitle("Hello!");
-//        stage.setScene(scene);
-//        stage.show();
-//
-//    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Platform.runLater( () -> loginButton.requestFocus() );
+    }
 }

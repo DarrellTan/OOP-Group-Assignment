@@ -16,7 +16,7 @@
             <Font name="System Bold Italic" size="37.0" />
          </font></Label>
       <Button layoutX="236.0" layoutY="375.0" mnemonicParsing="false" onAction="#submitButton" text="Insert" />
-      <Button layoutX="296.0" layoutY="375.0" mnemonicParsing="false" text="Back" onAction="#switchToMainMenu" />
+      <Button fx:id="back" layoutX="296.0" layoutY="375.0" mnemonicParsing="false" text="Back" onAction="#switchToMainMenu" />
       <Label fx:id="feedbackMessage" alignment="CENTER" layoutX="-3.0" layoutY="338.0" prefHeight="17.0" prefWidth="580.0" textAlignment="CENTER" />
    </children>
 </AnchorPane>

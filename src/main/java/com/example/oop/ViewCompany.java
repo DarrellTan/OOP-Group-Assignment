@@ -1,6 +1,5 @@
 package com.example.oop;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +8,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -52,9 +50,6 @@ public class ViewCompany implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //            FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewCompany.fxml"));
-//            AnchorPane root = loader.load();
-//            TextArea textArea = (TextArea) loader.getNamespace().get("textArea");
         String fileContent = readFileContent(filePath);
         textArea.setText(fileContent);
 

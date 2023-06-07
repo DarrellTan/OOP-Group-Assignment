@@ -31,10 +31,10 @@ public class MainMenu {
         stage.show();
     }
     public void switchToUpdateData(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        root = FXMLLoader.load(getClass().getResource("UpdateData.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("CSS/MainMenu.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("CSS/UpdateData.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -43,6 +43,14 @@ public class MainMenu {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root, 580, 460);
         scene.getStylesheets().add(getClass().getResource("CSS/Login.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToDeleteData(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("DeleteData.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 580, 460);
+        scene.getStylesheets().add(getClass().getResource("CSS/DeleteData.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

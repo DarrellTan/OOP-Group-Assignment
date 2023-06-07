@@ -18,38 +18,27 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-
-public class InsertData implements Initializable {
-    public static String filePath = "src/main/resources/com/example/oop/company_data.txt";
-
-    // FXML Variables
+public class DeleteData implements Initializable {
     @FXML
     private TextField cFID;
-    @FXML
-    private TextField cFName;
-    @FXML
-    private TextField cFYearFounded;
-    @FXML
-    private TextField cFAnnualRevenue;
-    @FXML
-    private TextField cFPollutionIndex;
     @FXML
     private Label feedbackMessage;
     @FXML
     private Button back;
+
+    private int deleteCID;
+
+    public static String filePath = "src/main/resources/com/example/oop/company_data.txt";
+    public static boolean existenceOfID;
 
     // Variables for JavaFX
     private Stage stage;
     private Scene scene;
     private Parent root;
 
-    // Variables for Data
-    private static int cID;
-    private static String cName;
-    private static int cYearFounded;
-    private static double cRevenue;
-    private static int cPI;
+    // Arrays for Storage
     private static ArrayList<String> CompanyData;
+    private static ArrayList<String> UpdatedCompanyData;
 
     public static ArrayList<String> callCompanyData() throws Exception{ //a class method to help save the current data in the text file
         BufferedReader br = new BufferedReader(new FileReader(filePath));
@@ -69,35 +58,10 @@ public class InsertData implements Initializable {
     }
 
     //clears the txt file to be replaced with the new data
-    public static void flushCompanyTxt()throws Exception{
+    public static void flushCompanyTxt() throws Exception{
         FileWriter files = new FileWriter(filePath, false);
         files.flush();
         files.close();
-    }
-
-    public boolean checkForUniqueID() {
-        for(int i = 0 ; i < CompanyData.size() ; i++){ //validates if the entered company ID already exists within the system
-            if(CompanyData.get((i)).equals("Company " + cID)){
-                System.out.println("Company ID already exists \n");
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public void assignDataToVariables() {
-        cID = Integer.parseInt(cFID.getText());
-        cName= cFName.getText();
-        cYearFounded = Integer.parseInt(cFYearFounded.getText());
-        cRevenue = Double.parseDouble(cFAnnualRevenue.getText());
-        cPI = Integer.parseInt(cFPollutionIndex.getText());
-    }
-    public void submitData() {
-        CompanyData.add("Company " + cID);
-        CompanyData.add("Company Name: " + cName);
-        CompanyData.add("Year Founded: " + cYearFounded);
-        CompanyData.add("Annual revenue: " + cRevenue);
-        CompanyData.add("Pollution index: " + cPI);
     }
     public void writeToTxt(){
         int counter = 1;
@@ -119,29 +83,33 @@ public class InsertData implements Initializable {
             e.printStackTrace();
         }
     }
+    public static void deleteCompany(ArrayList<String> companyData, int companyID) {
+        int index = -1;
 
-    public void success() {
-        cFID.clear();
-        cFName.clear();
-        cFYearFounded.clear();
-        cFAnnualRevenue.clear();
-        cFPollutionIndex.clear();
-        feedbackMessage.setText("Successfully Entered Company " + cID);
+        for (int i = 0; i < companyData.size(); i++) {
+            if (companyData.get(i).startsWith("Company " + companyID)) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index != -1) {
+            companyData.subList(index, index + 5).clear();
+            System.out.println("Company details deleted successfully.");
+        } else {
+            System.out.println("Company ID not found.");
+            existenceOfID = false;
+        }
     }
 
-    public void submitButton() throws Exception {
-        assignDataToVariables();
-        checkForUniqueID();
-        if (checkForUniqueID() == false) {
-            feedbackMessage.setText("Company ID already exists, try another one.");
-        } else {
-            submitData();
-            flushCompanyTxt();
-            writeToTxt();
-            success();
-            System.out.println(cFID + "\n" + cID);
-            System.out.println("Test Done");
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Platform.runLater( () -> back.requestFocus() );
+        try {
+            CompanyData = callCompanyData();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
+        UpdatedCompanyData = new ArrayList<String>();
     }
 
     public void switchToMainMenu(ActionEvent event) throws IOException {
@@ -152,13 +120,28 @@ public class InsertData implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Platform.runLater( () -> back.requestFocus() );
-        try {
-            CompanyData = callCompanyData();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+
+    public void success() {
+        cFID.clear();
+        feedbackMessage.setText("Successfully Deleted Company " + deleteCID);
+    }
+
+    public void idNonExistant() {
+        cFID.clear();
+        feedbackMessage.setText("Comapny " + deleteCID + " does not exist.");
+    }
+
+
+    public void deleteData() throws Exception {
+        deleteCID = Integer.parseInt(cFID.getText());
+        deleteCompany(CompanyData, deleteCID);
+        flushCompanyTxt();
+        writeToTxt();
+        if (existenceOfID != false) {
+            success();
+        } else {
+            idNonExistant();
         }
+
     }
 }

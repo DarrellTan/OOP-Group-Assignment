@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
-public class InsertData implements Initializable {
+public class UpdateData implements Initializable {
     public static String filePath = "src/main/resources/com/example/oop/company_data.txt";
 
     // FXML Variables
@@ -49,7 +49,16 @@ public class InsertData implements Initializable {
     private static int cYearFounded;
     private static double cRevenue;
     private static int cPI;
+    private static boolean cIDvalidate = true;
     private static ArrayList<String> CompanyData;
+    private static ArrayList<String> UpdatedCompanyData;
+
+    // Variables for Sorting Arrays
+    int IndexOfCID;
+    int FirstIndex;
+
+    int LastIndex;
+    int pointer = 0; //sets a variable to count for the updated company info array
 
     public static ArrayList<String> callCompanyData() throws Exception{ //a class method to help save the current data in the text file
         BufferedReader br = new BufferedReader(new FileReader(filePath));
@@ -69,35 +78,34 @@ public class InsertData implements Initializable {
     }
 
     //clears the txt file to be replaced with the new data
-    public static void flushCompanyTxt()throws Exception{
+    public static void flushCompanyTxt() throws Exception{
         FileWriter files = new FileWriter(filePath, false);
         files.flush();
         files.close();
     }
 
-    public boolean checkForUniqueID() {
+    public boolean checkIfIDExists() {
         for(int i = 0 ; i < CompanyData.size() ; i++){ //validates if the entered company ID already exists within the system
             if(CompanyData.get((i)).equals("Company " + cID)){
-                System.out.println("Company ID already exists \n");
-                return false;
+                System.out.println(CompanyData.get(i));
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     public void assignDataToVariables() {
         cID = Integer.parseInt(cFID.getText());
-        cName= cFName.getText();
+        cName = cFName.getText();
         cYearFounded = Integer.parseInt(cFYearFounded.getText());
         cRevenue = Double.parseDouble(cFAnnualRevenue.getText());
         cPI = Integer.parseInt(cFPollutionIndex.getText());
     }
     public void submitData() {
-        CompanyData.add("Company " + cID);
-        CompanyData.add("Company Name: " + cName);
-        CompanyData.add("Year Founded: " + cYearFounded);
-        CompanyData.add("Annual revenue: " + cRevenue);
-        CompanyData.add("Pollution index: " + cPI);
+        UpdatedCompanyData.add("Company Name: " + cName);
+        UpdatedCompanyData.add("Year Founded: " + cYearFounded);
+        UpdatedCompanyData.add("Annual revenue: " + cRevenue);
+        UpdatedCompanyData.add("Pollution index: " + cPI);
     }
     public void writeToTxt(){
         int counter = 1;
@@ -126,23 +134,34 @@ public class InsertData implements Initializable {
         cFYearFounded.clear();
         cFAnnualRevenue.clear();
         cFPollutionIndex.clear();
-        feedbackMessage.setText("Successfully Entered Company " + cID);
+        feedbackMessage.setText("Successfully Updated Company " + cID);
     }
 
-    public void submitButton() throws Exception {
+
+    public void updateButton() throws Exception {
         assignDataToVariables();
-        checkForUniqueID();
-        if (checkForUniqueID() == false) {
-            feedbackMessage.setText("Company ID already exists, try another one.");
-        } else {
-            submitData();
-            flushCompanyTxt();
-            writeToTxt();
-            success();
-            System.out.println(cFID + "\n" + cID);
-            System.out.println("Test Done");
+        if (checkIfIDExists() == false) {
+            feedbackMessage.setText("Company ID doesn't exist.");
+            return;
+        }
+        IndexOfCID = CompanyData.indexOf("Company " + cID); //gets the index of the company ID in the CompanyData Array
+        FirstIndex = IndexOfCID + 1; //gets the first index of the range to update the details of the company,
+        //IndexOfCID tells us the index of the CID but we need to change from the Company Name to the Pollution index so we +1
+        LastIndex = IndexOfCID + 5; //We add 5 to it to get the last range of the index.
+        submitData();
+        filterIndex();
+        flushCompanyTxt();
+        writeToTxt();
+        success();
+    }
+
+    public void filterIndex() {
+        for(int i = FirstIndex ; i < LastIndex ; i++){
+            CompanyData.set(i, UpdatedCompanyData.get(pointer));
+            pointer++;
         }
     }
+
 
     public void switchToMainMenu(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -152,6 +171,8 @@ public class InsertData implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Platform.runLater( () -> back.requestFocus() );
@@ -160,5 +181,6 @@ public class InsertData implements Initializable {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        UpdatedCompanyData = new ArrayList<String>();
     }
 }
