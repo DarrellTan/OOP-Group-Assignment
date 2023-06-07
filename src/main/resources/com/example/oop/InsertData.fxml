@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="460.0" maxWidth="580.0" minHeight="460.0" minWidth="580.0" prefHeight="460.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop.InsertData">
+   <children>
+      <TextField fx:id="cFID" layoutX="210.0" layoutY="167.0" promptText="Company ID" />
+      <TextField fx:id="cFName" layoutX="210.0" layoutY="198.0" promptText="Company Name" />
+      <TextField fx:id="cFYearFounded" layoutX="210.0" layoutY="230.0" promptText="Year Founded" />
+      <TextField fx:id="cFAnnualRevenue" layoutX="210.0" layoutY="261.0" promptText="Annual Revenue" />
+      <TextField fx:id="cFPollutionIndex" layoutX="210.0" layoutY="292.0" promptText="Pollution Index" />
+      <Label layoutX="206.0" layoutY="82.0" text="Insert Data">
+         <font>
+            <Font name="System Bold Italic" size="37.0" />
+         </font></Label>
+      <Button layoutX="236.0" layoutY="375.0" mnemonicParsing="false" onAction="#submitButton" text="Insert" />
+      <Button layoutX="296.0" layoutY="375.0" mnemonicParsing="false" text="Back" onAction="#switchToMainMenu" />
+      <Label fx:id="feedbackMessage" alignment="CENTER" layoutX="-3.0" layoutY="338.0" prefHeight="17.0" prefWidth="580.0" textAlignment="CENTER" />
+   </children>
+</AnchorPane>

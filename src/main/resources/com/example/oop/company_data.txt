@@ -4,4 +4,9 @@ Year Founded: 200
 Annual revenue: 32
 Pollution index: 4
 
+Company 3
+Company Name: Darrell
+Year Founded: 2003
+Annual revenue: 2525252.0
+Pollution index: 25
 

@@ -19,10 +19,12 @@ public class Main extends Application {
             Parent root = fxmlLoader.load();
 
             // Creates Scene for JavaFX Program
-            Scene scene = new Scene(root, 400, 400);
+            Scene scene = new Scene(root, 580, 460);
 
             // Gets CSS file for Styling
             scene.getStylesheets().add(getClass().getResource("CSS/Login.css").toExternalForm());
+
+            // Stage Details and Showing Stage
             stage.setTitle("Cancelling Companies App");
             stage.setScene(scene);
             stage.show();

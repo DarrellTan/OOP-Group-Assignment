@@ -1,4 +1,49 @@
 package com.example.oop;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
 public class MainMenu {
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+    public void switchToInsertData(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("InsertData.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("CSS/InsertData.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToViewCompanyData(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("ViewCompany.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 580, 460);
+        scene.getStylesheets().add(getClass().getResource("CSS/ViewCompany.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToUpdateData(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("CSS/MainMenu.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToLogin(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 580, 460);
+        scene.getStylesheets().add(getClass().getResource("CSS/Login.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
 }

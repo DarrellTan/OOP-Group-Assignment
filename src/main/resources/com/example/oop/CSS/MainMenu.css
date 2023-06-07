@@ -1,0 +1,14 @@
+.button {
+    -fx-border-color: #000000;
+    -fx-background-color: #F8F5F5;
+    -fx-min-width: 100px;
+    -fx-min-height: 30px;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 30px;
+    -fx-max-width: 100px;
+    -fx-max-height: 30px;
+}
+
+.button:hover {
+    -fx-background-color: #8ACC73;
+}

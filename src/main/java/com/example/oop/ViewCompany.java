@@ -1,36 +1,45 @@
 package com.example.oop;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ResourceBundle;
 
-public class ViewCompany extends Application {
+public class ViewCompany implements Initializable {
 
-    public String filePath = "src/main/resources/com/example/oop/company_data.txt";
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewCompany.fxml"));
-        AnchorPane root = loader.load();
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
-        TextArea textArea = (TextArea) loader.getNamespace().get("textArea");
-  // Replace with the actual file path
-        String fileContent = readFileContent(filePath);
-        textArea.setText(fileContent);
+    @FXML
+    private TextArea textArea;
 
-        Scene scene = new Scene(root, 600, 400);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+    public static String filePath = "src/main/resources/com/example/oop/company_data.txt";
+
+    public void switchToMainMenu(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 580, 460);
+        scene.getStylesheets().add(getClass().getResource("CSS/MainMenu.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
     }
 
-    private String readFileContent(String filePath) {
+    private static String readFileContent(String filePath) {
         try {
             Path path = Paths.get(filePath);
             byte[] bytes = Files.readAllBytes(path);
@@ -41,7 +50,13 @@ public class ViewCompany extends Application {
         return "";
     }
 
-    public static void main(String[] args) {
-        launch(args);
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        //            FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewCompany.fxml"));
+//            AnchorPane root = loader.load();
+//            TextArea textArea = (TextArea) loader.getNamespace().get("textArea");
+        String fileContent = readFileContent(filePath);
+        textArea.setText(fileContent);
+
     }
 }
