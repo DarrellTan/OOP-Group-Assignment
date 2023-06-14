@@ -1,6 +1,7 @@
 module com.example.oop {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens com.example.oop to javafx.fxml;

@@ -5,11 +5,9 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.PasswordField?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.oop.MainMenu">
+      fx:controller="com.example.oop.MainMenuController">
 
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
@@ -17,9 +15,11 @@
 
 
     <Button text="Insert Data" onAction="#switchToInsertData"></Button>
-    <Button text="View Data" onAction="#switchToViewCompanyData"></Button>
+    <Button text="View Company Data" onAction="#switchToViewCompanyData"/>
+    <Button text="View Cancelled Companies" onAction="#switchToViewCancelledCompanies"/>
     <Button text="Update Data" onAction="#switchToUpdateData"></Button>
     <Button text="Delete Data" onAction="#switchToDeleteData"></Button>
+    <Button text="Register New Admin" onAction="#switchToRegisterNewAdmin"></Button>
 
     <HBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml">
         <Button text="Log Out" styleClass="button" onAction="#switchToLogin"/>

@@ -139,8 +139,6 @@ public class InsertData implements Initializable {
             flushCompanyTxt();
             writeToTxt();
             success();
-            System.out.println(cFID + "\n" + cID);
-            System.out.println("Test Done");
         }
     }
 

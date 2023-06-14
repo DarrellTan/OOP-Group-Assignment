@@ -1,0 +1,12 @@
+Company 1
+Company Name: Bob Inc
+Year Founded: 200
+Annual revenue: 32
+Pollution index: 254
+
+Company 4
+Company Name: Dasdad
+Year Founded: 2003
+Annual revenue: 4324.0
+Pollution index: 332
+

@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MainMenu {
+public class GuestMainMenuController {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -22,27 +22,27 @@ public class MainMenu {
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToViewCompanyData(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("ViewCompany.fxml"));
+    public void switchToGuestViewCompany(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("GuestViewCompany.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root, 580, 460);
-        scene.getStylesheets().add(getClass().getResource("CSS/ViewCompany.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("CSS/GuestViewCompany.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToUpdateData(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("UpdateData.fxml"));
+    public void switchToViewCancelledCompanies(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("ViewCancelledCompanies.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("CSS/UpdateData.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("CSS/ViewCancelledCompanies.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToLogin(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+    public void switchToFirstPage(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("FirstPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root, 580, 460);
-        scene.getStylesheets().add(getClass().getResource("CSS/Login.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("CSS/FirstPage.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

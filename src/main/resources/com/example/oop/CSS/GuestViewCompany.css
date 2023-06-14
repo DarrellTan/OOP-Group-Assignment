@@ -1,4 +1,7 @@
 .button {
+    -fx-padding: 10px;
+    -fx-border-insets: 10px;
+    -fx-background-insets: 10px;
     -fx-border-color: #000000;
     -fx-background-color: #F8F5F5;
 }

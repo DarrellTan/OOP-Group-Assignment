@@ -2,29 +2,22 @@ Company 1
 Company Name: Bob Inc
 Year Founded: 200
 Annual revenue: 32
-Pollution index: 4
+Pollution index: 254
 
-Company 3
+Company 2
 Company Name: poop
 Year Founded: 2323
 Annual revenue: 52323.0
-Pollution index: 23
+Pollution index: 230
 
-Company 4
+Company 3
 Company Name: Poop
 Year Founded: 2003
 Annual revenue: 3224234.0
-Pollution index: 15
+Pollution index: 150
 
-Company 6
+Company 4
 Company Name: Dasdad
 Year Founded: 2003
 Annual revenue: 4324.0
-Pollution index: 32
-
-Company 4
-Company Name: sadada
-Year Founded: 2323
-Annual revenue: 23.0
-Pollution index: 42
-
+Pollution index: 332

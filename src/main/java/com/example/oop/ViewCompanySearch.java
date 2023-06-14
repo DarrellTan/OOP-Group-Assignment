@@ -17,7 +17,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
-public class ViewCompany implements Initializable {
+public class ViewCompanySearch implements Initializable {
 
     private Stage stage;
     private Scene scene;

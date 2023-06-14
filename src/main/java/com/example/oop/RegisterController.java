@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginController implements Initializable {
+public class RegisterController implements Initializable {
 
     // Declaring the variables needed for login
     @FXML
@@ -27,7 +27,7 @@ public class LoginController implements Initializable {
     private PasswordField passwordField;
 
     @FXML
-    private Button loginButton;
+    private Button registerButton;
 
     // Scene Swapping Attributes
     private Stage stage;
@@ -67,7 +67,7 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Platform.runLater( () -> loginButton.requestFocus() );
+        Platform.runLater( () -> registerButton.requestFocus() );
     }
 
 }
