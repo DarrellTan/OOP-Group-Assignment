@@ -36,7 +36,13 @@ Pollution index: 10
 
 Company 7
 Company Name: Proton
-Year Founded: 1940
-Annual revenue: 200000.0
-Pollution index: 132
+Year Founded: 1942
+Annual revenue: 232320.0
+Pollution index: 160
+
+Company 8
+Company Name: Top Glove
+Year Founded: 2004
+Annual revenue: 99999.0
+Pollution index: 350
 

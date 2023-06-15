@@ -12,13 +12,19 @@ Year Founded: 2003
 Annual revenue: 23232.0
 Pollution index: 520
 
-RM5,000 PENALTY FOR API BETWEEN 151-200 
+Company 8
+Company Name: Top Glove
+Year Founded: 2004
+Annual revenue: 99999.0
+Pollution index: 350
 
-RM2,500 PENALTY FOR API BETWEEN 101-150 
+RM5,000 PENALTY FOR API BETWEEN 151-200 
 
 Company 7
 Company Name: Proton
-Year Founded: 1940
-Annual revenue: 200000.0
-Pollution index: 132
+Year Founded: 1942
+Annual revenue: 232320.0
+Pollution index: 160
+
+RM2,500 PENALTY FOR API BETWEEN 101-150 
 

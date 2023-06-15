@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -26,9 +27,12 @@ public class ViewCancelledController implements Initializable {
 
     @FXML
     private TextArea textArea;
+    @FXML
+    private TextField searchBar;
 
     public static String filePath = "src/main/resources/com/example/oop/company_data.txt";
     public static String cancellationFilePath = "src/main/resources/com/example/oop/cancellationCandidates.txt";
+    public static String searchFilePath = "src/main/resources/com/example/oop/search.txt";
 
     public void switchToMainMenu(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -48,6 +52,51 @@ public class ViewCancelledController implements Initializable {
             e.printStackTrace();
         }
         return "";
+    }
+
+    public void refresh(){
+        String fileContent = readFileContent(cancellationFilePath);
+        textArea.setText(fileContent);
+    }
+
+    public void searchButton() throws IOException {
+        ArrayList<ArrayList<String>> companiesData = new ArrayList<ArrayList<String>>(); //This ArrayList will store each companies data in seperate ArrayList
+
+        int stopper = 5;
+
+        while (stopper <= callCompanyData().size()) {
+            ArrayList<String> singleCompanyData = new ArrayList<String>(); //This ArrayList is to seperate each companies data
+
+            for (int i = stopper - 5; i < stopper; i++) {
+                singleCompanyData.add(callCompanyData().get(i)); //This will add item index 0-5 from callCompanyData to a new ArrayList
+            }
+            companiesData.add(singleCompanyData); //This adds the whole singleCompanyData ArrayList to the new ArrayList
+            stopper += 5;
+        }
+
+        //fr creates a connection to an empty penalties file
+        FileWriter fr = new FileWriter(searchFilePath);
+        //br helps write in the chosen companies' data in that file
+        BufferedWriter br = new BufferedWriter(fr);
+
+        String search = searchBar.getText();
+
+        for (int i=0; i<companiesData.size(); i++) { //For int i smaller than the number of companies in our database
+            for (int j=0; j<companiesData.get(i).size(); j++) { //For int j smaller than the number of data for each company
+                if (companiesData.get(i).get(j).contains(search)) { //If any of the data contains user's searched word
+                    for (int k=0; k<companiesData.get(i).size(); k++) { //For int k smaller than the number of data for each company
+                        br.write(companiesData.get(i).get(k) + "\n"); //Write all the data of that specific company containing the searched word
+                    }
+                } else {
+                    continue;
+                }
+                br.write("\n"); //Just to make it look nicer hehe
+                break;
+            }
+        }
+        br.close();
+        String newFileContent = readFileContent(searchFilePath);
+        textArea.setText(newFileContent);
     }
 
     public static ArrayList<String> callCompanyData() throws FileNotFoundException, IOException { //a class method to help save the current data in the text file

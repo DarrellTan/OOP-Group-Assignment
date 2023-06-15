@@ -1,0 +1,6 @@
+Company 5
+Company Name: Apple
+Year Founded: 1987
+Annual revenue: 2.0E7
+Pollution index: 45
+

@@ -51,7 +51,7 @@ public class LoginController implements Initializable {
         passVal = String.valueOf(passwordField.getText());
         System.out.println(unameVal + passVal);
     }
-    public void login() throws IOException {
+    public void login(ActionEvent event) throws IOException {
         assignVariables();
         //Scanner to read through admins file containing usernames and pws
         Scanner admins = new Scanner(Login.class.getResourceAsStream("admins.txt"));
@@ -82,7 +82,12 @@ public class LoginController implements Initializable {
                 if (unameVal.equals(users.get(i))
                         && passVal.equals(passes.get(i))) {
                     System.out.println("Credentials Test Pass");
-                   switchToMainMenu();
+                    root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    scene = new Scene(root, 580, 460);
+                    scene.getStylesheets().add(getClass().getResource("CSS/MainMenu.css").toExternalForm());
+                    stage.setScene(scene);
+                    stage.show();
 
                     break;
 
