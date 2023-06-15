@@ -30,7 +30,7 @@ public class RegisterController implements Initializable {
     private PasswordField passwordField;
 
     @FXML
-    private PasswordField cofirmPasswordField;
+    private PasswordField confirmPasswordField;
 
     @FXML
     private Button registerButton;
@@ -73,7 +73,7 @@ public class RegisterController implements Initializable {
     public void assignVariables(){
         regUsr = usernameField.getText();
         regPw = passwordField.getText();
-        regConfPw = cofirmPasswordField.getText();
+        regConfPw = confirmPasswordField.getText();
     }
 
     public void register() throws IOException {
@@ -86,6 +86,9 @@ public class RegisterController implements Initializable {
             out.write("Password: " + regPw);
             out.close();
 
+            usernameField.clear();
+            passwordField.clear();
+            confirmPasswordField.clear();
             feedbackMessage.setText("Successfully Registered User " + regUsr);
 
         }
@@ -94,22 +97,6 @@ public class RegisterController implements Initializable {
         }
     }
 
-    // Event Handler which performs a method to get Login Details into Strings
-    @FXML
-    private void buttonEventHandler(ActionEvent event) throws IOException {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
-        System.out.println(username + "\n" + password);
-        if (passwordMatch == true) {
-            // Changes to Main Menu
-            root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root, 580, 460);
-            scene.getStylesheets().add(getClass().getResource("CSS/MainMenu.css").toExternalForm());
-            stage.setScene(scene);
-            stage.show();
-        }
-    }
 
     public void buttonRegister() throws IOException {
         assignVariables();

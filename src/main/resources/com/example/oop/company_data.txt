@@ -41,8 +41,8 @@ Annual revenue: 232320.0
 Pollution index: 160
 
 Company 8
-Company Name: Top Glove
+Company Name: Top Glove 
 Year Founded: 2004
-Annual revenue: 99999.0
-Pollution index: 350
+Annual revenue: 232487.0
+Pollution index: 352
 
