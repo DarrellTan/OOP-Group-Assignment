@@ -57,7 +57,7 @@ public class Search {
                         System.out.println(companiesData.get(i).get(k)); //Print all the data of that specific company containing the searched word
                     }
                 } else {
-                    break;
+                    continue;
                 }
                 System.out.println(""); //Just to make it look nicer hehe
             }

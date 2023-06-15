@@ -46,11 +46,19 @@ public class GuestMainMenuController {
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToDeleteData(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("DeleteData.fxml"));
+    public void switchToGuestViewPenalties(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("GuestViewPenalties.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root, 580, 460);
-        scene.getStylesheets().add(getClass().getResource("CSS/DeleteData.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("CSS/GuestViewPenalties.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToGuestViewBonus(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("GuestViewBonus.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 580, 460);
+        scene.getStylesheets().add(getClass().getResource("CSS/GuestViewBonus.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

@@ -1,6 +1,24 @@
 RM10,000 PENALTY FOR API EXCEEDING 200 
 
+Company 1
+Company Name: Bob Inc
+Year Founded: 200
+Annual revenue: 32
+Pollution index: 254
+
+Company 2
+Company Name: dsada
+Year Founded: 2003
+Annual revenue: 23232.0
+Pollution index: 520
+
 RM5,000 PENALTY FOR API BETWEEN 151-200 
 
 RM2,500 PENALTY FOR API BETWEEN 101-150 
+
+Company 7
+Company Name: Proton
+Year Founded: 1940
+Annual revenue: 200000.0
+Pollution index: 132
 

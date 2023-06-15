@@ -1,14 +1,6 @@
-Company 1
-Company Name: Bob Inc
-Year Founded: 200
-Annual revenue: 32
-Pollution index: 254
+RM5,000 GRANT FOR API BETWEEN 51-100 
 
-Company 2
-Company Name: dsada
-Year Founded: 2003
-Annual revenue: 23232.0
-Pollution index: 520
+RM15,000 GRANT FOR API UNDER 50 
 
 Company 3
 Company Name: sfdsfd
@@ -33,10 +25,4 @@ Company Name: DBKL
 Year Founded: 1950
 Annual revenue: 324233.0
 Pollution index: 10
-
-Company 7
-Company Name: Proton
-Year Founded: 1940
-Annual revenue: 200000.0
-Pollution index: 132
 

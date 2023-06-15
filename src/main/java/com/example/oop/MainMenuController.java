@@ -79,4 +79,12 @@ public class MainMenuController {
         stage.setScene(scene);
         stage.show();
     }
+    public void switchToViewBonus(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("ViewBonus.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 580, 460);
+        scene.getStylesheets().add(getClass().getResource("CSS/ViewBonus.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
 }

@@ -17,6 +17,7 @@
     <Button text="View Company Data" onAction="#switchToViewCompanyData"/>
     <Button text="View Cancelled Companies" onAction="#switchToCancelledCompanies"/>
     <Button text="View Companies With Penalties" onAction="#switchToViewPenalties"/>
+    <Button text="View Companies With Bonus" onAction="#switchToViewBonus"/>
     <Button text="Update Data" onAction="#switchToUpdateData"></Button>
     <Button text="Delete Data" onAction="#switchToDeleteData"></Button>
     <Button text="Register New Admin" onAction="#switchToRegisterNewAdmin"></Button>

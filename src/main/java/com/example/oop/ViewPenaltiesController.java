@@ -72,7 +72,7 @@ public class ViewPenaltiesController implements Initializable {
 
         int stopper = 5;
 
-        while (stopper<= companiesData.size()) {
+        while (stopper<= callCompanyData().size()) {
             ArrayList<String> singleCompanyData = new ArrayList<String>(); //This ArrayList is to seperate each companies data
 
             for (int i=stopper-5; i<stopper; i++) {
@@ -95,7 +95,7 @@ public class ViewPenaltiesController implements Initializable {
             int pollIndex = Integer.parseInt(companiesData.get(i).get(4).substring(17));
 
             //If pollution index 200 - 250
-            if (pollIndex > 200 && pollIndex <= 250) {
+            if (pollIndex > 200) {
 
                 //Add that company to penalty list
                 for (int j=0; j<companiesData.get(i).size(); j++) {
@@ -138,7 +138,7 @@ public class ViewPenaltiesController implements Initializable {
 
 
         br.close();
-}
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
