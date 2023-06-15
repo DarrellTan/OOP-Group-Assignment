@@ -23,7 +23,7 @@ public class Main extends Application {
             scene.getStylesheets().add(getClass().getResource("CSS/FirstPage.css").toExternalForm());
 
             // Stage Details and Showing Stage
-            stage.setTitle("Cancelling Companies App");
+            stage.setTitle("Pollufree!");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {

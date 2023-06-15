@@ -5,19 +5,14 @@ Annual revenue: 32
 Pollution index: 254
 
 Company 2
-Company Name: poop
-Year Founded: 2323
-Annual revenue: 52323.0
-Pollution index: 230
+Company Name: dsada
+Year Founded: 2003
+Annual revenue: 23232.0
+Pollution index: 520
 
 Company 3
-Company Name: Poop
+Company Name: sfdsfd
 Year Founded: 2003
-Annual revenue: 3224234.0
-Pollution index: 150
+Annual revenue: 25.0
+Pollution index: 32
 
-Company 4
-Company Name: Dasdad
-Year Founded: 2003
-Annual revenue: 4324.0
-Pollution index: 332

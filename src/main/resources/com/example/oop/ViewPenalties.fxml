@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop.ViewPenaltiesController">
+    <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml">
+        <ScrollPane layoutX="10.0" layoutY="10.0" prefHeight="380.0" prefWidth="580.0">
+            <TextArea fx:id="textArea" prefHeight="380.0" prefWidth="580.0" wrapText="true" editable="false" />
+        </ScrollPane>
+        <HBox alignment="CENTER" spacing="20.0">
+            <Button fx:id="Search" styleClass="button" onAction="#switchToMainMenu">Search</Button>
+            <Button fx:id="Back" styleClass="button" onAction="#switchToMainMenu">Back</Button>
+        </HBox>
+    </VBox>
+</AnchorPane>

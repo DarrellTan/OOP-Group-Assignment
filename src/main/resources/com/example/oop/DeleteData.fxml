@@ -6,13 +6,13 @@
 
 <AnchorPane maxHeight="460.0" maxWidth="580.0" minHeight="460.0" minWidth="580.0" prefHeight="460.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop.DeleteData">
     <children>
-        <TextField fx:id="cFID" layoutX="210.0" layoutY="167.0" promptText="Company ID"/>
+        <TextField fx:id="cFID" layoutX="210.0" layoutY="167.0" promptText="Company ID" />
         <Label layoutX="206.0" layoutY="82.0" text="Delete Data">
             <font>
                 <Font name="System Bold Italic" size="37.0" />
             </font></Label>
         <Button layoutX="236.0" layoutY="375.0" mnemonicParsing="false" onAction="#deleteData" text="Update" />
         <Button fx:id="back" layoutX="296.0" layoutY="375.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="Back" />
-        <Label fx:id="feedbackMessage" alignment="CENTER" layoutX="-3.0" layoutY="338.0" prefHeight="17.0" prefWidth="580.0" textAlignment="CENTER" />
+        <Label fx:id="feedbackMessage" alignment="CENTER" layoutX="-3.0" layoutY="338.0" prefHeight="17.0" prefWidth="580.0" text=" " textAlignment="CENTER" />
     </children>
 </AnchorPane>

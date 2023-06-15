@@ -55,11 +55,11 @@ public class MainMenuController {
         stage.show();
     }
 
-    public void switchToViewCancelledCompanies(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("ViewCancelledCompanies.fxml"));
+    public void switchToCancelledCompanies(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("ViewCancelled.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("CSS/ViewCancelledCompanies.css").toExternalForm());
+        scene = new Scene(root, 580, 460);
+        scene.getStylesheets().add(getClass().getResource("CSS/ViewCancelled.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -68,6 +68,14 @@ public class MainMenuController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root, 580, 460);
         scene.getStylesheets().add(getClass().getResource("CSS/DeleteData.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToViewPenalties(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("ViewPenalties.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 580, 460);
+        scene.getStylesheets().add(getClass().getResource("CSS/ViewPenalties.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

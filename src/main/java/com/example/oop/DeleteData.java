@@ -95,6 +95,7 @@ public class DeleteData implements Initializable {
 
         if (index != -1) {
             companyData.subList(index, index + 5).clear();
+            existenceOfID = true;
             System.out.println("Company details deleted successfully.");
         } else {
             System.out.println("Company ID not found.");
@@ -128,7 +129,7 @@ public class DeleteData implements Initializable {
 
     public void idNonExistant() {
         cFID.clear();
-        feedbackMessage.setText("Comapny " + deleteCID + " does not exist.");
+        feedbackMessage.setText("Company " + deleteCID + " does not exist.");
     }
 
 
@@ -137,6 +138,7 @@ public class DeleteData implements Initializable {
         deleteCompany(CompanyData, deleteCID);
         flushCompanyTxt();
         writeToTxt();
+        System.out.println(existenceOfID);
         if (existenceOfID != false) {
             success();
         } else {

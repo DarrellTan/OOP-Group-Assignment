@@ -5,7 +5,8 @@ import javax.swing.*;
 import java.io.*;
 
 public class Login {
-    
+    public static String filePath = "src/main/resources/com/example/oop/admins.txt";
+
     //This class registers new admins
     public static void register() throws Exception {
         //Input field for registration
@@ -32,7 +33,7 @@ public class Login {
             
             //Confirms whether the passwords match, if yes, registration is success
             if (regPw.equals(regConfPw)) {
-                FileWriter file = new FileWriter("src/login/admins.txt", true);
+                FileWriter file = new FileWriter(filePath, true);
                 BufferedWriter out = new BufferedWriter(file);
 
                 out.write("\n\n");
