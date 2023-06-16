@@ -97,14 +97,7 @@ public class LoginController implements Initializable {
             }
     }
 
-    public void switchToScene1(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 580, 460);
-        scene.getStylesheets().add(getClass().getResource("CSS/MainMenu.css").toExternalForm());
-        stage.setScene(scene);
-        stage.show();
-    }
+// Controller to switch scenes
 
     public void switchToMainMenu() {
         try {
@@ -146,7 +139,6 @@ public class LoginController implements Initializable {
     }
 
 
-        // Event Handler which performs a method to get Login Details into Strings
     @FXML
     private void buttonEventHandler(ActionEvent event) throws IOException {
         String username = usernameField.getText();

@@ -5,16 +5,16 @@ Annual revenue: 32
 Pollution index: 254
 
 Company 2
-Company Name: dsada
-Year Founded: 2003
-Annual revenue: 23232.0
-Pollution index: 520
+Company Name: BMW
+Year Founded: 1960
+Annual revenue: 3523623.0
+Pollution index: 235
 
 Company 3
-Company Name: sfdsfd
-Year Founded: 2003
-Annual revenue: 25.0
-Pollution index: 32
+Company Name: Toyota
+Year Founded: 1950
+Annual revenue: 2352462.0
+Pollution index: 78
 
 Company 4
 Company Name: Tesla
@@ -51,4 +51,22 @@ Company Name: Nintendo
 Year Founded: 1960
 Annual revenue: 4.6000754E7
 Pollution index: 22
+
+Company 10
+Company Name: Taylor's University
+Year Founded: 1970
+Annual revenue: 2352623.0
+Pollution index: 89
+
+Company 11
+Company Name: Sunway
+Year Founded: 1960
+Annual revenue: 4.2352352E7
+Pollution index: 135
+
+Company 12
+Company Name: Samsung
+Year Founded: 1989
+Annual revenue: 2352352.0
+Pollution index: 145
 

@@ -7,16 +7,16 @@ Annual revenue: 32
 Pollution index: 254
 
 Company 2
-Company Name: dsada
-Year Founded: 2003
-Annual revenue: 23232.0
-Pollution index: 520
+Company Name: BMW
+Year Founded: 1960
+Annual revenue: 3523623.0
+Pollution index: 235
 
 Company 8
-Company Name: Top Glove
+Company Name: Top Glove 
 Year Founded: 2004
-Annual revenue: 99999.0
-Pollution index: 350
+Annual revenue: 232487.0
+Pollution index: 352
 
 RM5,000 PENALTY FOR API BETWEEN 151-200 
 
@@ -27,4 +27,16 @@ Annual revenue: 232320.0
 Pollution index: 160
 
 RM2,500 PENALTY FOR API BETWEEN 101-150 
+
+Company 11
+Company Name: Sunway
+Year Founded: 1960
+Annual revenue: 4.2352352E7
+Pollution index: 135
+
+Company 12
+Company Name: Samsung
+Year Founded: 1989
+Annual revenue: 2352352.0
+Pollution index: 145
 

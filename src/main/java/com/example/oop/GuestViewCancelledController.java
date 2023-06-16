@@ -34,6 +34,7 @@ public class GuestViewCancelledController implements Initializable {
     public static String cancellationFilePath = "src/main/resources/com/example/oop/cancellationCandidates.txt";
     public static String searchFilePath = "src/main/resources/com/example/oop/search.txt";
 
+    // Controller to switch scenes
     public void switchToGuestMainMenu(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("GuestMainMenu.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -53,6 +54,8 @@ public class GuestViewCancelledController implements Initializable {
         }
         return "";
     }
+
+    // Methods to search for test
 
     public void refresh(){
         String fileContent = readFileContent(cancellationFilePath);

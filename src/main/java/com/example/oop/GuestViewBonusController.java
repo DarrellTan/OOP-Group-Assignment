@@ -34,7 +34,7 @@ public class GuestViewBonusController implements Initializable {
     public static String grantsFilePath = "src/main/resources/com/example/oop/grants.txt";
     public static String searchFilePath = "src/main/resources/com/example/oop/search.txt";
 
-
+    // Controller to switch scenes
     public void switchToGuestMainMenu(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("GuestMainMenu.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -55,6 +55,7 @@ public class GuestViewBonusController implements Initializable {
         return "";
     }
 
+    // Methods to Search for text
     public void refresh(){
         String fileContent = readFileContent(grantsFilePath);
         textArea.setText(fileContent);

@@ -31,7 +31,7 @@ public class Main extends Application {
         }
     }
 
-
+    // Launch the JavaFX application
     public static void main(String[] args) {
         launch(args);
     }

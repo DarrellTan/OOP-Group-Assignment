@@ -1,12 +1,18 @@
 RM5,000 GRANT FOR API BETWEEN 51-100 
 
-RM15,000 GRANT FOR API UNDER 50 
-
 Company 3
-Company Name: sfdsfd
-Year Founded: 2003
-Annual revenue: 25.0
-Pollution index: 32
+Company Name: Toyota
+Year Founded: 1950
+Annual revenue: 2352462.0
+Pollution index: 78
+
+Company 10
+Company Name: Taylor's University
+Year Founded: 1970
+Annual revenue: 2352623.0
+Pollution index: 89
+
+RM15,000 GRANT FOR API UNDER 50 
 
 Company 4
 Company Name: Tesla
@@ -25,4 +31,10 @@ Company Name: DBKL
 Year Founded: 1950
 Annual revenue: 324233.0
 Pollution index: 10
+
+Company 9
+Company Name: Nintendo
+Year Founded: 1960
+Annual revenue: 4.6000754E7
+Pollution index: 22
 

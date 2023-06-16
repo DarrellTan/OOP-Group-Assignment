@@ -17,7 +17,7 @@ public class FirstPageController {
     private Scene scene;
     private Parent root;
 
-
+// Controller to switch scenes
     public void switchToGuestMainMenu(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("GuestMainMenu.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

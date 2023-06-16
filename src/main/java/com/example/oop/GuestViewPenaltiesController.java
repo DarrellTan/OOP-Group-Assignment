@@ -34,6 +34,7 @@ public class GuestViewPenaltiesController implements Initializable {
     public static String penaltiesFilePath = "src/main/resources/com/example/oop/penalties.txt";
     public static String searchFilePath = "src/main/resources/com/example/oop/search.txt";
 
+    // Controller to switch scenes
     public void switchToGuestMainMenu(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("GuestMainMenu.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -54,6 +55,7 @@ public class GuestViewPenaltiesController implements Initializable {
         return "";
     }
 
+    // Method to search for text
     public void refresh(){
         String fileContent = readFileContent(penaltiesFilePath);
         textArea.setText(fileContent);

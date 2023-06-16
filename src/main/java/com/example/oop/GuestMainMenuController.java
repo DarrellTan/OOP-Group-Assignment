@@ -14,14 +14,7 @@ public class GuestMainMenuController {
     private Scene scene;
     private Parent root;
 
-    public void switchToInsertData(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("InsertData.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("CSS/InsertData.css").toExternalForm());
-        stage.setScene(scene);
-        stage.show();
-    }
+    // Controller to switch scenes
     public void switchToGuestViewCompany(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("GuestViewCompany.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

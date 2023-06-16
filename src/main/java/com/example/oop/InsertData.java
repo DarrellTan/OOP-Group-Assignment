@@ -142,6 +142,7 @@ public class InsertData implements Initializable {
         }
     }
 
+    // Controller to switch scenes
     public void switchToMainMenu(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
