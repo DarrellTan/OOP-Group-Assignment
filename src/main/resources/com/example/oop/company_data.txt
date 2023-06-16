@@ -46,3 +46,9 @@ Year Founded: 2004
 Annual revenue: 232487.0
 Pollution index: 352
 
+Company 9
+Company Name: Nintendo
+Year Founded: 1960
+Annual revenue: 4.6000754E7
+Pollution index: 22
+

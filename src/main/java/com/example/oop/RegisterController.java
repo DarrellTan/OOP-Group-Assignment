@@ -18,7 +18,9 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class RegisterController implements Initializable {
 
@@ -77,22 +79,52 @@ public class RegisterController implements Initializable {
     }
 
     public void register() throws IOException {
-        if (regPw.equals(regConfPw)) {
-            FileWriter file = new FileWriter(filePath, true);
-            BufferedWriter out = new BufferedWriter(file);
+        //Scanner to read through admins file containing usernames and pws
+        Scanner admins = new Scanner(Login.class.getResourceAsStream("admins.txt"));
 
-            out.write("\n\n");
-            out.write("Username: " + regUsr + "\n");
-            out.write("Password: " + regPw);
-            out.close();
+        //Empty arrays for usernames and passwords
+        ArrayList<String> users = new ArrayList<String>();
+        ArrayList<String> passes = new ArrayList<String>();
 
-            usernameField.clear();
-            passwordField.clear();
-            confirmPasswordField.clear();
-            feedbackMessage.setText("Successfully Registered User " + regUsr);
+        //This loop reads through admin file and imports username and password to the empty arrays
+        while (admins.hasNextLine()) {
+            String adLine = admins.nextLine();
 
+            if (!adLine.equals("")) {
+                String admSub = adLine.substring(0, 4);
+
+                if (admSub.equals("User")) {
+                    String usr = adLine.substring(10);
+
+                    users.add(usr);
+                } else if (admSub.equals("Pass")) {
+                    String pass = adLine.substring(10);
+
+                    passes.add(pass);
+                }
+            }
         }
-        else {
+
+
+        //Confirms whether the passwords match, if yes, registration is success
+        if (regPw.equals(regConfPw)) {
+            if (!users.contains(regUsr)) {
+                FileWriter file = new FileWriter(filePath, true);
+                BufferedWriter out = new BufferedWriter(file);
+
+                out.write("\n\n");
+                out.write("Username: " + regUsr + "\n");
+                out.write("Password: " + regPw);
+                out.close();
+
+                usernameField.clear();
+                passwordField.clear();
+                confirmPasswordField.clear();
+                feedbackMessage.setText("Successfully Registered User " + regUsr);
+            } else {
+                feedbackMessage.setText("Username not available");
+            }
+        } else {
             feedbackMessage.setText("Passwords do not match");
         }
     }
